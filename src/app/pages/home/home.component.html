@@ -1,0 +1,31 @@
+<h1 class="mt-3 font-weight-light">Videos Youtube de Fundación Monte Alvernia</h1>
+<img src="https://yt3.ggpht.com/a/AATXAJz4AK4fKzvlshQx_RiHhXbp_1vd71Bkw-nDYQ=s100-c-k-c0xffffffff-no-rj-mo" style="width:80px; border-radius: 25px;">
+<hr>
+
+
+<div class="card-columns border-primary">
+    <div class="card animated fadeIn" *ngFor="let video of videos">
+        <img [src]="video.thumbnails.high.url" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ video.title}}</h5>
+            <p class="card-text">
+                <strong>Autor: {{ video.channelTitle}}</strong>
+            </p>
+            <p class="card-text">
+                <strong>Publicado en: {{ video.publishedAt | date }}</strong>
+            </p>
+            <button class="btn btn-outline-primary btn-block" (click)="mostrarVideo(video)">
+                Ver video
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 mb-5 text-center">
+    <div class="col">
+        <button class="btn btn-primary btn-lg" (click)="cargarVideos()">
+            Siguientes videos
+        </button>
+    </div>
+</div>
